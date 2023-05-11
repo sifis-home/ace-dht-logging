@@ -61,12 +61,12 @@ public class DhtLogger {
 	private static Session session = null;
 	private static boolean loggingEnabled = false;
 
-	private static String LOG_TOPIC_NAME = "SIFIS:Log";
-	private static String LOG_TOPIC_UUID = "Log";
+	private static final String LOG_TOPIC_NAME = "SIFIS:Log";
+	private static final String LOG_TOPIC_UUID = "Log";
 
 	private static String websocketUri = "ws://localhost:3000/ws";
 
-	private static int LOG_MAX_LEN = 200;
+	private static final int LOG_MAX_LEN = 200;
 
 	/**
 	 * Sends a logging message to the DHT
@@ -81,7 +81,7 @@ public class DhtLogger {
 	static public void sendLog(String type, String priority, String category, String device, String message) {
 
 		// Return if DHT logging is not used
-		if (loggingEnabled == false) {
+		if (!loggingEnabled) {
 			return;
 		}
 
@@ -95,7 +95,7 @@ public class DhtLogger {
 			boolean dhtConnected = establishConnection();
 
 			// If the connection failed to be established, return
-			if (dhtConnected == false) {
+			if (!dhtConnected) {
 				return;
 			}
 		}
