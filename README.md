@@ -3,15 +3,22 @@ DHT logging for the Java implementation of the ACE framework
 
 ## Usage
 
-Add dependency
+Add this repository 
+```
+	<repository>
+		<id>jitpack.io</id>
+		<url>https://jitpack.io</url>
+	</repository>
+```
+and this dependency
 
 ```
-    <groupId>it.cnr.iit</groupId>
+    <groupId>com.github.sifis-home</groupId>
     <artifactId>ace-dht-logging</artifactId>
     <version>0.0.1</version>
 ```
 
-to your `ace-java` project and you are ready to communicate with the DHT through websockets.
+to your `ace-java` project's `pom.xml` file  and you are ready to communicate with the DHT through websockets.
 
 ---
 
