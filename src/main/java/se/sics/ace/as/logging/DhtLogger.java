@@ -200,10 +200,8 @@ public class DhtLogger {
 		latch = new CountDownLatch(1000);
 		dhtClient = ClientManager.createClient();
 		try {
-			// wss://socketsbay.com/wss/v2/2/demo/
 			URI uri = new URI(websocketUri);
 			session = dhtClient.connectToServer(DhtLogger.class, uri);
-			// latch.await();
 		} catch (DeploymentException | URISyntaxException | IOException e) {
 			System.err.println("Error: Failed to connect to DHT for logging");
 			e.printStackTrace();
