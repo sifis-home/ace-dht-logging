@@ -91,7 +91,7 @@ public class DhtLogger {
 
 		// If a connection is not established yet (which should
 		// have been done from the application), do it now
-		if (dhtClient == null || session == null) {
+		if (dhtClient == null || session == null || !session.isOpen()) {
 			boolean dhtConnected = establishConnection();
 
 			// If the connection failed to be established, return
@@ -149,7 +149,7 @@ public class DhtLogger {
 	 */
 	public static ClientManager getClientInstance() {
 
-		if (dhtClient == null || session == null) {
+		if (dhtClient == null || session == null || !session.isOpen()) {
 			establishConnection();
 		}
 
@@ -163,7 +163,7 @@ public class DhtLogger {
 	 */
 	public static Session getSessionInstance() {
 
-		if (dhtClient == null || session == null) {
+		if (dhtClient == null || session == null || !session.isOpen()) {
 			establishConnection();
 		}
 
